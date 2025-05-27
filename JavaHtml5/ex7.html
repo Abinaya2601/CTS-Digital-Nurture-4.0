@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Promo Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background-color: #f8f9fa;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 2em auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    video {
+      display: block;
+      max-width: 100%;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+
+    .message {
+      text-align: center;
+      font-weight: bold;
+      color: green;
+      margin-top: 10px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align: center;">🎉 You're Invited! 🎥</h2>
+  <video id="promoVideo" controls oncanplay="showVideoReadyMessage()">
+    <source src="event-promo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="message" id="videoStatus"></div>
+  <form id="feedbackForm">
+    <h3>Give Us Your Feedback</h3>
+    <label for="name">Name</label>
+    <input type="text" id="name" required placeholder="Your Name" />
+
+    <label for="comment">Comment</label>
+    <textarea id="comment" rows="4" placeholder="Your thoughts..."></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    let formChanged = false;
+
+    function showVideoReadyMessage() {
+      document.getElementById("videoStatus").textContent = "🎬 Video ready to play!";
+    }
+    const form = document.getElementById("feedbackForm");
+    form.addEventListener("input", () => {
+      formChanged = true;
+    });
+    form.addEventListener("submit", () => {
+      formChanged = false;
+      alert("Thank you for your feedback!");
+    });
+    window.onbeforeunload = function (e) {
+      if (formChanged) {
+        e.preventDefault();
+        e.returnValue = "You have unsaved changes. Are you sure you want to leave?";
+      }
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Debugging Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    nav {
+      background-color: #333333;
+      color: white;
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    main {
+      margin: 20px;
+      background-color: white;
+      width: 400px; 
+      padding: 10px;
+    }
+    footer {
+      text-align: left;
+      background-color: #222;
+      color: white;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Events</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <h1>Welcome to the Event Portal</h1>
+    <p id="status"></p>
+
+    <button id="testBtn">Click Me</button>
+  </main>
+
+  <footer>
+    &copy; 2025 Event Portal
+  </footer>
+
+  <script>
+    const button = document.getElementById('testBtn');
+    const status = document.getElementById('status');
+
+    button.addEventListener('click', () => {
+      console.log('Button was clicked!');
+      status.textContent = 'Button clicked. Check console for logs.';
+      try {
+        let result = undefinedVariable + 1;
+        console.log('Result:', result);
+      } catch (error) {
+        console.error('Caught error:', error);
+        status.textContent += ' Error occurred - see console.';
+      }
+    });
+  </script>
+
+</body>
+</html>

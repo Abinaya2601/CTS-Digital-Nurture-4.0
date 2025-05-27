@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Find Nearby Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 1em;
+      margin-top: 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .output {
+      margin-top: 20px;
+      font-size: 1em;
+      color: #333;
+      word-wrap: break-word;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>📍 Find Nearby Events</h2>
+    <button onclick="findNearbyEvents()">Find Nearby Events</button>
+    <div class="output" id="locationOutput"></div>
+  </div>
+
+  <script>
+    function findNearbyEvents() {
+      const output = document.getElementById("locationOutput");
+      output.innerHTML = "Locating...";
+
+      if (!navigator.geolocation) {
+        output.innerHTML = "<span class='error'>Geolocation is not supported by your browser.</span>";
+        return;
+      }
+
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+      };
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude.toFixed(6);
+          const lon = position.coords.longitude.toFixed(6);
+          output.innerHTML = `✅ Your Coordinates:<br>Latitude: ${lat}<br>Longitude: ${lon}`;
+        },
+        (error) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              output.innerHTML = "<span class='error'>❌ Permission denied. Please allow location access.</span>";
+              break;
+            case error.POSITION_UNAVAILABLE:
+              output.innerHTML = "<span class='error'>❌ Location unavailable. Try again later.</span>";
+              break;
+            case error.TIMEOUT:
+              output.innerHTML = "<span class='error'>⏱️ Location request timed out. Please try again.</span>";
+              break;
+            default:
+              output.innerHTML = "<span class='error'>❌ An unknown error occurred.</span>";
+          }
+        },
+        options
+      );
+    }
+  </script>
+
+</body>
+</html>
