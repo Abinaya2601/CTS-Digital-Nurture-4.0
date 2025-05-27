@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fixed Footer Example</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      padding-bottom: 60px; /* Height of the footer */
+    }
+    footer {
+      height: 60px;
+      line-height: 60px;
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      width: 100%;
+      z-index: 1030;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container my-5">
+  <h1>Page Content</h1>
+  <p>Scroll down to see the fixed footer at the bottom.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula felis euismod semper.</p>
+</div>
+
+<footer class="position-fixed bottom-0">
+  Fixed Footer © 2025
+</footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

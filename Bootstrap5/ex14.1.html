@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Display Utilities</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+
+<div class="container my-5">
+  <h2>Display and Visibility</h2>
+
+  <div class="bg-info text-white p-3 mb-3 d-none d-md-block">
+    This box is hidden on xs and sm screens, visible as block on md and up.
+  </div>
+
+  <div class="bg-success text-white p-3 mb-3 d-none d-lg-flex">
+    This box is hidden below lg and shown as flex on lg and up.
+  </div>
+
+  <div class="bg-warning p-3 mb-3 d-block d-md-none">
+    This box is visible only on xs and sm screens (block display).
+  </div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
