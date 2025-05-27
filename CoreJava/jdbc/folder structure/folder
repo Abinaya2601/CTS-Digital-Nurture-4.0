@@ -1,0 +1,14 @@
+/project-root
+  /com.utils
+    /src
+      /com
+        /utils
+          Util.java
+    module-info.java
+
+  /com.greetings
+    /src
+      /com
+        /greetings
+          Greeting.java
+    module-info.java
