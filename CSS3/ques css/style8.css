@@ -1,0 +1,29 @@
+
+.eventCard {
+  border: 2px solid #007BFF;
+  padding: 20px;
+  margin: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+input.highlight {
+  outline: 2px solid orange;
+  padding: 8px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.box-hidden {
+  visibility: hidden; /* Takes up space but invisible */
+  background-color: lightcoral;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.box-none {
+  display: none; /* Does not take up space */
+  background-color: lightseagreen;
+  padding: 10px;
+  margin-top: 20px;
+}

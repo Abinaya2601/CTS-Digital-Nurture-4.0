@@ -1,0 +1,29 @@
+
+body {
+  background-color: #e0f7fa; 
+  background-image: url('images/city-council-bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgba(33, 33, 33, 0.87); 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.section-header {
+  background: linear-gradient(90deg, #004d40, #26a69a); 
+  color: #fff; 
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+h2 {
+  color: #00796b; 
+}
+p {
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+}

@@ -1,0 +1,9 @@
+
+.news-article {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  padding: 20px;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+}
